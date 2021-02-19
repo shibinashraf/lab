@@ -1,0 +1,90 @@
+import java.util.*;
+public class Employee{
+ private String name;
+ private int age;
+ private String phone;
+ private String address;
+ private double salary;
+ public void printsalary(){
+ System.out.println("Salary =" +salary);
+ }
+public Employee(String name ,int age ,String phone ,String address ,double salary){
+ this.name = name;
+ this.age = age;
+ this.phone = phone;
+ this.address = address;
+ this.salary = salary;
+}
+public void displayEmployee(){
+ System.out.println("Name ="+name + "Age ="+age+"Phone Number ="+phone+"Address
+="+address+"Salary ="+salary);
+}
+}
+class Manager extends Employee{
+ private String specialization;
+ private String department;
+ public Manager(String name ,int age ,String phone ,String address ,double salary ,String
+specialization ,String department){
+ super(name,age,phone,address,salary);
+ this.specialization = specialization;
+ this.department = department;
+ }
+ public void displayManager(){
+ displayEmployee();
+ System.out.println("Specialization ="+specialization+"Department ="+department);
+ }
+}
+class officer extends Employee{
+ private String specialization;
+ private String department;
+ public officer(String name ,int age ,String phone ,String address ,double salary ,String
+specialization ,String department){
+ super(name,age,phone,address,salary);
+ this.specialization = specialization;
+ this.department = department;
+ }
+ public void displayofficer(){
+ displayEmployee();
+ System.out.println("Specialization ="+specialization+"Department ="+department);
+ }
+}
+class Test{
+ public static void main(String []args){
+ Scanner sc = new Scanner(System.in);
+ System.out.println("Enter Manager Details ");
+ System.out.print("Name :");
+ String name = sc.nextLine();
+ System.out.print("Age :");
+ int age = sc.nextInt();sc.nextLine();
+ System.out.print("Phone Number :");
+String phone = sc.nextLine();
+ System.out.print("Address :");
+ String address = sc.nextLine();
+ System.out.print("Salary :");
+ double salary = sc.nextDouble();sc.nextLine();
+ System.out.print("Specialization :");
+ String specialization = sc.nextLine();
+ System.out.print("Department :");
+ String department = sc.nextLine();
+ Manager m = new Manager(name,age,phone,address,salary,specialization,department);
+ m.displayManager();
+
+ System.out.println("Enter Officer Details ");
+ System.out.print("Name :");
+ String name1 = sc.nextLine();
+ System.out.print("Age :");
+ int age1 = sc.nextInt();sc.nextLine();
+ System.out.print("Phone Number :");
+ String phone1 = sc.nextLine();
+ System.out.print("Address :");
+ String address1 = sc.nextLine();
+ System.out.print("Salary :");
+ double salary1= sc.nextDouble();sc.nextLine();
+ System.out.print("Specialization :");
+ String specialization1 = sc.nextLine();
+ System.out.print("Department :");
+ String department1 = sc.nextLine();
+ officer o = new officer(name1,age1,phone1,address1,salary1,specialization1,department1);
+ o.displayofficer();
+ }
+}
